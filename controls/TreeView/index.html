@@ -235,7 +235,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Accordion/" title="Controls" class="md-tabs__link md-tabs__link--active">
+        <a href="../AccessibleAccordion/Accordion.md" title="Controls" class="md-tabs__link md-tabs__link--active">
           Controls
         </a>
       
@@ -449,6 +449,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../AccessibleAccordion/Accordion.md" title="AccessibleAccordion" class="md-nav__link">
+      AccessibleAccordion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Accordion/" title="Accordion" class="md-nav__link">
       Accordion
     </a>
@@ -474,13 +486,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
     
-    <label class="md-nav__link" for="nav-4-3">
+    <label class="md-nav__link" for="nav-4-4">
       Charts
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
+      <label class="md-nav__title" for="nav-4-4">
         Charts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1319,7 +1331,7 @@
 <li>Check that you installed the <code>@pnp/spfx-controls-react</code> dependency. Check out the <a href="../../#getting-started">getting started</a> page for more information about installing the dependency.</li>
 <li>Import the following modules to your component:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TreeView</span><span class="p">,</span> <span class="nx">ITreeItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/spfx-controls-react/lib/TreeView&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TreeView</span><span class="p">,</span> <span class="nx">ITreeItem</span><span class="p">,</span> <span class="nx">TreeViewSelectionMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/spfx-controls-react/lib/TreeView&quot;</span><span class="p">;</span>
 </code></pre></div>
 
 <ul>
@@ -1332,7 +1344,7 @@
     <span class="nx">selectChildrenIfParentSelected</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
     <span class="nx">showCheckboxes</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
     <span class="nx">treeItemActionsDisplayMode</span><span class="o">=</span><span class="p">{</span><span class="nx">TreeItemActionsDisplayMode</span><span class="p">.</span><span class="nx">ContextualMenu</span><span class="p">}</span>
-    <span class="nx">defaultSelectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]},</span>
+    <span class="nx">defaultSelectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]}</span>
     <span class="nx">expandToSelected</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
     <span class="nx">defaultExpandedChildren</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
     <span class="nx">onSelect</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onTreeItemSelect</span><span class="p">}</span>

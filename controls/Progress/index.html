@@ -235,7 +235,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Accordion/" title="Controls" class="md-tabs__link md-tabs__link--active">
+        <a href="../AccessibleAccordion/Accordion.md" title="Controls" class="md-tabs__link md-tabs__link--active">
           Controls
         </a>
       
@@ -449,6 +449,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../AccessibleAccordion/Accordion.md" title="AccessibleAccordion" class="md-nav__link">
+      AccessibleAccordion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Accordion/" title="Accordion" class="md-nav__link">
       Accordion
     </a>
@@ -474,13 +486,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
     
-    <label class="md-nav__link" for="nav-4-3">
+    <label class="md-nav__link" for="nav-4-4">
       Charts
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
+      <label class="md-nav__title" for="nav-4-4">
         Charts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1320,8 +1332,8 @@ As example, you can have a base class that implements <code>IProgressAction</cod
 
 <p>Now, in a component, where <code>Progress</code> is used you can have code as below:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">export</span> <span class="kd">interface</span> <span class="nx">IYourComponentState</span> <span class="p">{</span>
-  <span class="nx">actions</span>: <span class="kt">IProgressAction</span><span class="p">[];</span>
-  <span class="nx">currentActionIndex?</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">progressActions</span>: <span class="kt">IProgressAction</span><span class="p">[];</span>
+  <span class="nx">currentProgressActionIndex?</span>: <span class="kt">number</span><span class="p">;</span>
   <span class="c1">// other state properties</span>
 <span class="p">}</span>
 
@@ -1332,7 +1344,7 @@ As example, you can have a base class that implements <code>IProgressAction</cod
 
   <span class="k">private</span> <span class="nx">_initActions</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-      <span class="nx">actions</span><span class="o">:</span> <span class="p">[</span>
+      <span class="nx">progressActions</span><span class="o">:</span> <span class="p">[</span>
         <span class="k">new</span> <span class="nx">FirstAction</span><span class="p">(),</span>
         <span class="k">new</span> <span class="nx">SecondAction</span><span class="p">()</span>
       <span class="p">]</span>
@@ -1341,7 +1353,7 @@ As example, you can have a base class that implements <code>IProgressAction</cod
 
   <span class="k">private</span> <span class="k">async</span> <span class="nx">_execute</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">currentActionIndex</span>: <span class="kt">i</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">currentProgressActionIndex</span>: <span class="kt">i</span><span class="p">);</span>
 
       <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">actions</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">execute</span><span class="p">();</span>
