@@ -930,6 +930,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../MyTeams/" title="MyTeams" class="md-nav__link">
+      MyTeams
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Pagination/" title="Pagination" class="md-nav__link">
       Pagination
     </a>
@@ -1028,6 +1040,30 @@
   <li class="md-nav__item">
     <a href="../TaxonomyPicker/" title="TaxonomyPicker" class="md-nav__link">
       TaxonomyPicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TeamChannelPicker/" title="TeamChannelPicker" class="md-nav__link">
+      TeamChannelPicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TeamPicker/" title="TeamPicker" class="md-nav__link">
+      TeamPicker
     </a>
   </li>
 
@@ -1416,16 +1452,16 @@ Currently supported locations
 <ul>
 <li>Sample <code>onSave</code> handler:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">private</span> <span class="nx">_onFilePickerSave</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">filePickerResult</span>: <span class="kt">IFilePickerResult</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">filePickerResult</span>: <span class="kt">filePickerResult</span> <span class="p">});</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">filePickerResult</span> <span class="o">&amp;&amp;</span> <span class="nx">filePickerResult</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">filePickerResult</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">filePickerResult</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-      <span class="kd">const</span> <span class="nx">fileResultContent</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">downloadFileContent</span><span class="p">();</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fileResultContent</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code>  <span class="k">private</span> <span class="nx">_onFilePickerSave</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">filePickerResult</span>: <span class="kt">IFilePickerResult</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">filePickerResult</span>: <span class="kt">filePickerResult</span> <span class="p">});</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">filePickerResult</span> <span class="o">&amp;&amp;</span> <span class="nx">filePickerResult</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">filePickerResult</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">filePickerResult</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">fileResultContent</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">downloadFileContent</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fileResultContent</span><span class="p">);</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span>
 </code></pre></div>
 
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
@@ -1484,7 +1520,7 @@ Currently supported locations
 </tr>
 <tr>
 <td>context</td>
-<td>ExtensionContext | WebPartContext</td>
+<td>BaseComponentContext</td>
 <td>yes</td>
 <td>Current context.</td>
 </tr>
