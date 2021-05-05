@@ -665,6 +665,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../DragDropFiles/" title="DragDropFiles" class="md-nav__link">
+      DragDropFiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../FieldCollectionData/" title="FieldCollectionData" class="md-nav__link">
       FieldCollectionData
     </a>
@@ -905,6 +917,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../SecurityTrimmedControl/" title="SecurityTrimmedControl" class="md-nav__link">
+      SecurityTrimmedControl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../SiteBreadcrumb/" title="SiteBreadcrumb" class="md-nav__link">
       SiteBreadcrumb
     </a>
@@ -917,8 +941,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../SecurityTrimmedControl/" title="SecurityTrimmedControl" class="md-nav__link">
-      SecurityTrimmedControl
+    <a href="../SitePicker/" title="SitePicker" class="md-nav__link">
+      SitePicker
     </a>
   </li>
 
@@ -1343,7 +1367,7 @@
 <li>Check that you installed the <code>@pnp/spfx-controls-react</code> dependency. Check out the <a href="../../#getting-started">getting started</a> page for more information about installing the dependency.</li>
 <li>Import the following modules to your component:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TreeView</span><span class="p">,</span> <span class="nx">ITreeItem</span><span class="p">,</span> <span class="nx">TreeViewSelectionMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/spfx-controls-react/lib/TreeView&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TreeView</span><span class="p">,</span> <span class="nx">ITreeItem</span><span class="p">,</span> <span class="nx">TreeViewSelectionMode</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">&quot;@pnp/spfx-controls-react/lib/TreeView&quot;</span><span class="p">;</span>
 </code></pre></div>
 
 <ul>
@@ -1353,7 +1377,7 @@
     <span class="nx">items</span><span class="o">=</span><span class="p">{</span><span class="nx">treeitems</span><span class="p">}</span>
     <span class="nx">defaultExpanded</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
     <span class="nx">selectionMode</span><span class="o">=</span><span class="p">{</span><span class="nx">TreeViewSelectionMode</span><span class="p">.</span><span class="nx">Multiple</span><span class="p">}</span>
-    <span class="nx">selectChildrenIfParentSelected</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+    <span class="nx">selectChildrenMode</span><span class="o">=</span><span class="p">{</span><span class="nx">SelectChildrenMode</span><span class="p">.</span><span class="nx">Select</span> <span class="o">|</span> <span class="nx">SelectChildrenMode</span><span class="p">.</span><span class="nx">Unselect</span><span class="p">}</span>
     <span class="nx">showCheckboxes</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
     <span class="nx">treeItemActionsDisplayMode</span><span class="o">=</span><span class="p">{</span><span class="nx">TreeItemActionsDisplayMode</span><span class="p">.</span><span class="nx">ContextualMenu</span><span class="p">}</span>
     <span class="nx">defaultSelectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]}</span>
@@ -1383,7 +1407,7 @@
 <h2 id="custom-rendering">Custom Rendering<a class="headerlink" href="#custom-rendering" title="Permanent link">&para;</a></h2>
 <p>You can fully customize how tree items are rendered by providing the <code>onRenderItem</code> callback function and returning whatever <code>JSX.Element</code> you want.</p>
 <p>For example, you can define your function in a .tsx file like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
 <span class="k">private</span> <span class="nx">renderCustomTreeItem</span><span class="p">(</span><span class="nx">item</span>: <span class="kt">ITreeItem</span><span class="p">)</span><span class="o">:</span> <span class="nx">JSX</span><span class="p">.</span><span class="nx">Element</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
@@ -1432,7 +1456,13 @@
 <td>selectChildrenIfParentSelected</td>
 <td>boolean</td>
 <td>no</td>
-<td>Specifies if the childrens should be selected when parent item is selected (defaults to false).</td>
+<td>Specifies if the children should be selected when parent item is selected (defaults to false). <strong>Deprecated</strong>: prefer usage of <code>selectChildrenMode</code> for more flexibility.</td>
+</tr>
+<tr>
+<td>selectChildrenMode</td>
+<td>SelectChildrenMode</td>
+<td>no</td>
+<td>Specifies if the children should be selected when parent item is selected (defaults to None). Flagged enum, values can be combined eg. <code>SelectChildrenMode.Select \| SelectChildrenMode.Unselect</code></td>
 </tr>
 <tr>
 <td>showCheckboxes</td>
@@ -1501,6 +1531,42 @@
 </tr>
 <tr>
 <td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Enum <code>SelectChildrenMode</code></p>
+<p>Specifies when the children of a selected item need to be automatically selected.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Children are never selected</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>When selecting an item, its children are also selected</td>
+</tr>
+<tr>
+<td>Unselect</td>
+<td>When unselecting an item, its children are also unselected</td>
+</tr>
+<tr>
+<td>Mount</td>
+<td>When the component is mounted, all children of selected items are also selected</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>When the component receives new props, all children of selected items are also selected</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Shorthand for a combination of all of the above, same as <code>SelectChildrenMode.Select \| SelectChildrenMode.Unselect \| SelectChildrenMode.Mount \| SelectChildrenMode.Update</code></td>
 </tr>
 </tbody>
 </table>

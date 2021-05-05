@@ -665,6 +665,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../DragDropFiles/" title="DragDropFiles" class="md-nav__link">
+      DragDropFiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../FieldCollectionData/" title="FieldCollectionData" class="md-nav__link">
       FieldCollectionData
     </a>
@@ -957,6 +969,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../SecurityTrimmedControl/" title="SecurityTrimmedControl" class="md-nav__link">
+      SecurityTrimmedControl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../SiteBreadcrumb/" title="SiteBreadcrumb" class="md-nav__link">
       SiteBreadcrumb
     </a>
@@ -969,8 +993,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../SecurityTrimmedControl/" title="SecurityTrimmedControl" class="md-nav__link">
-      SecurityTrimmedControl
+    <a href="../SitePicker/" title="SitePicker" class="md-nav__link">
+      SitePicker
     </a>
   </li>
 
@@ -1308,13 +1332,13 @@
 <h2 id="the-contextualmenu-component">The ContextualMenu component<a class="headerlink" href="#the-contextualmenu-component" title="Permanent link">&para;</a></h2>
 <p>In order to create a contextual menu for your list view, you first need to create a new component which will use a combination of an <a href="https://developer.microsoft.com/en-us/fabric#/components/button#Variants">IconButton</a> and <a href="https://developer.microsoft.com/en-us/fabric#/components/contextualmenu">ContextualMenu</a> controls from the Office UI Fabric React.</p>
 <p>Here is some sample code:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Layer</span><span class="p">,</span> <span class="nx">IconButton</span><span class="p">,</span> <span class="nx">IButtonProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;office-ui-fabric-react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ContextualMenuItemType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;office-ui-fabric-react/lib/ContextualMenu&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Layer</span><span class="p">,</span> <span class="nx">IconButton</span><span class="p">,</span> <span class="nx">IButtonProps</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;office-ui-fabric-react&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ContextualMenuItemType</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;office-ui-fabric-react/lib/ContextualMenu&#39;</span><span class="p">;</span>
 <span class="c1">// The following are project specific components</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">IECBProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./IECBProps&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styles</span> <span class="nx">from</span> <span class="s1">&#39;./ECB.module.scss&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">IListitem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../model/IListitem&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IECBProps</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;./IECBProps&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="s1">&#39;./ECB.module.scss&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IListitem</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;../../model/IListitem&#39;</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ECB</span> <span class="k">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">IECBProps</span><span class="p">,</span> <span class="p">{}</span><span class="o">&gt;</span> <span class="p">{</span>
 
