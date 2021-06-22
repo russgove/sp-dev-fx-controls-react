@@ -185,3 +185,9 @@ export interface ICultureInfo {
     dateTimeFormat: ICultureDateTimeFormat;
     numberFormat: ICultureNumberFormat;
 }
+
+export interface IUploadImageResult {
+  Name: string;
+  ServerRelativeUrl: string;
+  UniqueId: string;
+}
